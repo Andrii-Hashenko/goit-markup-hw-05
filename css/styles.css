@@ -449,7 +449,7 @@ address {
   fill: var(--web-hover-fokus);
 }
 .clients-link .svg-icon {
-  fill: var(--additional-text);
+  fill: var(--social-link-icon);
 }
 
 /* FOOTER */
