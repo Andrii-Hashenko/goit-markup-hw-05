@@ -149,7 +149,7 @@ address {
 .nav-stud,
 .nav-portf,
 .nav-cont {
-  position: relative; 
+  position: relative;
   display: block;
   font-weight: 500;
   line-height: 1.14;
@@ -172,16 +172,16 @@ address {
 }
 
 .nav-link::after {
-content: '';
-position: absolute;
-left: 0;
-bottom: 0;
-display: block;
-width: 100%;
-height: 5px; ;
-background: #2196F3;
-border-radius: 2px;
-opacity: 0;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #2196f3;
+  border-radius: 2px;
+  opacity: 0;
 }
 .nav-head .current::after {
   opacity: 1;
@@ -354,6 +354,25 @@ opacity: 0;
   flex-basis: calc(100% / 3 - var(--ul-class-gap));
   margin-left: var(--ul-class-gap);
 }
+.job-img {
+  position: relative;
+}
+.img-text {
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
+  padding: 27px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 70px;
+}
+
 /* TEAM */
 .team {
   background: var(--team-background);
