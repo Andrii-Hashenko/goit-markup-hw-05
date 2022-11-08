@@ -689,13 +689,10 @@ footer {
   align-content: center;
 }
 .portfolio-linkbox {
-  position: relative;
-  overflow: hidden;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-linkbox:hover,
 .portfolio-linkbox:focus {
-  
   box-shadow: 0px 1px 1px var(--team-bth-p-box-shadow),
     0px 4px 4px var(--portfolio-item-hover06),
     1px 4px 6px var(--portfolio-item-hover16);
@@ -720,7 +717,10 @@ footer {
   color: var(--additional-text);
   padding-bottom: 20px;
 }
-
+.overlay-tumb {
+  position: relative;
+  overflow: hidden;
+}
 .overlay-text {
   font-family: "Roboto";
   font-style: normal;
@@ -729,19 +729,21 @@ footer {
   line-height: 28px;
   letter-spacing: 0.03em;
   color: #ffffff;
+}
+.overlay-box {
   position: absolute;
   top: 0;
   left: 0;
   width: 370;
-  height: 73%;
+  height: 100%;
   background: rgba(33, 150, 243, 0.9);
   padding: 45px 19px 81px 29px;
-  transform: translatey(130%);
-  /* opacity: 0; */
+  transform: translatey(137%);
+  opacity: 0;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.overlay-text:hover {
+.portfolio-linkbox:hover .overlay-box {
   transform: translateY(0);
   opacity: 1;
 }
