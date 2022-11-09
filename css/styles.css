@@ -35,6 +35,9 @@
   --portfolio-item-hover16: rgba(0, 0, 0, 0.16);
   --ul-class-gap: 30px;
   --filter-gap: 8px;
+  --overlay-box-bg: rgba(33, 150, 243, 0.9);
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --img-text-bg: rgba(47, 48, 58, 0.8);
 }
 /* HIDDEN */
 .visually-hidden {
@@ -136,7 +139,7 @@ address {
   align-items: center;
   fill: var(--additional-text);
   margin-right: 10px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms var(--cubic-bezier);
 }
 .contacts-mailto:hover .svg-icon,
 .contacts-mailto:focus .svg-icon {
@@ -156,7 +159,7 @@ address {
   letter-spacing: 0.02em;
   color: var(--text-color);
   padding: 32px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-bezier);
 }
 .nav-stud:hover,
 .nav-stud:focus {
@@ -179,7 +182,7 @@ address {
   display: block;
   width: 100%;
   height: 5px;
-  background: #2196f3;
+  background: var(--web-hover-fokus);
   border-radius: 2px;
   opacity: 0;
 }
@@ -200,7 +203,7 @@ address {
   letter-spacing: 0.02em;
   color: var(--additional-text);
   padding: 32px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-bezier);
 }
 .contacts-mailto:hover,
 .contacts-mailto:focus {
@@ -215,7 +218,7 @@ address {
   letter-spacing: 0.02em;
   color: var(--additional-text);
   padding: 32px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-bezier);
 }
 .contacts-tel:hover,
 .contacts-tel:focus {
@@ -263,9 +266,8 @@ address {
   border-radius: 4px;
   cursor: pointer;
   border: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms var(--cubic-bezier),
+    background 250ms var(--cubic-bezier), visibility 250ms var(--cubic-bezier);
 }
 .caption-btn:hover,
 .caption-btn:focus {
@@ -274,7 +276,6 @@ address {
 /* BACKDROP */
 .backdrop.is-hidden {
   visibility: hidden;
-  opacity: 0;
   pointer-events: none;
 }
 .backdrop {
@@ -283,10 +284,10 @@ address {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 1;
+  z-index: 2;
   visibility: visible;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms var(--cubic-bezier),
+    visibility 250ms var(--cubic-bezier);
 }
 .modal {
   position: absolute;
@@ -295,9 +296,10 @@ address {
   left: 50%;
   top: 56%;
   transform: translate(-50%, -50%);
-  background: #ffffff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  background: var(--hero-footer);
+  box-shadow: 0px 1px 3px var(--team-bth-p-box-shadow),
+    0px 1px 1px var(--team-box-shadow-two),
+    0px 2px 1px var(--team-box-shadow-three);
   border-radius: 4px;
 }
 .modal-close {
@@ -308,8 +310,8 @@ address {
   top: 8px;
   display: block;
   padding: 6px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--hero-footer);
+  border: 1px solid var(--btn-p-box-shadow-one);
   border-radius: 50%;
 }
 /* OFFER */
@@ -376,8 +378,8 @@ address {
   line-height: 1.14;
   text-align: center;
   text-transform: uppercase;
-  color: #ffffff;
-  background: rgba(47, 48, 58, 0.8);
+  color: var(--hero-footer);
+  background: var(--img-text-bg);
   padding: 27px;
   position: absolute;
   left: 0;
@@ -461,8 +463,7 @@ address {
   border-radius: 50%;
   color: var(--social-link-icon);
   background: var(--hero-footer);
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms var(--cubic-bezier);
 }
 .link-icon:hover,
 .link-icon:focus {
@@ -471,7 +472,7 @@ address {
 }
 .team-social .svg-icon {
   fill: currentColor;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-bezier);
 }
 /* clients */
 .clients-title {
@@ -504,7 +505,7 @@ address {
   align-items: center;
   border: 1px solid var(--social-link-icon);
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms var(--cubic-bezier);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -518,7 +519,7 @@ address {
 }
 .clients-link .svg-icon {
   fill: var(--social-link-icon);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms var(--cubic-bezier);
 }
 
 /* FOOTER */
@@ -544,7 +545,7 @@ footer {
   line-height: 1.71;
   color: var(--hero-footer);
   margin-bottom: 9px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-bezier);
 }
 .adres {
   padding-left: 0;
@@ -556,7 +557,7 @@ footer {
 .adres-mailto {
   line-height: 1.71;
   color: var(--adres-m-t-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-bezier);
 }
 .adres-mail {
   margin-bottom: 9px;
@@ -568,7 +569,7 @@ footer {
 .adres-tel {
   line-height: 1.71;
   color: var(--adres-m-t-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic-bezier);
 }
 .adres-tel:hover,
 .adres-tel:focus {
@@ -597,7 +598,6 @@ footer {
 
 .joinin-title {
   font-weight: 700;
-  font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
   padding-top: 70px;
@@ -627,8 +627,8 @@ footer {
   color: var(--hero-footer);
   background: var(--join-in-list);
   padding: 12px;
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms var(--cubic-bezier),
+    color 250ms var(--cubic-bezier);
 }
 .link-icon:hover,
 .link-icon:focus {
@@ -650,8 +650,8 @@ footer {
   color: var(--text-color);
   cursor: pointer;
   border: transparent;
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms var(--cubic-bezier),
+    color 250ms var(--cubic-bezier);
 }
 .btn-projects:hover,
 .btn-projects:focus {
@@ -691,11 +691,12 @@ footer {
   margin-bottom: var(--ul-class-gap);
   align-content: center;
 }
-.portfolio-linkbox {
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.portfolio-link {
+  display: block;
+  transition: box-shadow 250ms var(--cubic-bezier);
 }
-.portfolio-linkbox:hover,
-.portfolio-linkbox:focus {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px var(--team-bth-p-box-shadow),
     0px 4px 4px var(--portfolio-item-hover06),
     1px 4px 6px var(--portfolio-item-hover16);
@@ -725,13 +726,9 @@ footer {
   overflow: hidden;
 }
 .overlay-text {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.03em;
-  color: #ffffff;
+  line-height: 1.56;
+  color: var(--hero-footer);
 }
 .overlay-box {
   position: absolute;
@@ -739,17 +736,14 @@ footer {
   left: 0;
   width: 370;
   height: 100%;
-  background: rgba(33, 150, 243, 0.9);
+  background: var(--overlay-box-bg);
   padding: 45px 19px 81px 29px;
   transform: translatey(137%);
   opacity: 0;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms var(--cubic-bezier),
+    opacity 250ms var(--cubic-bezier);
 }
-.portfolio-linkbox:hover .overlay-box {
-  transform: translateY(0);
-  opacity: 1;
-}
+.portfolio-link:hover .overlay-box,
 .portfolio-link:focus .overlay-box {
   transform: translateY(0);
   opacity: 1;
