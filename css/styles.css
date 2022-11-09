@@ -263,7 +263,9 @@ address {
   border-radius: 4px;
   cursor: pointer;
   border: none;
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .caption-btn:hover,
 .caption-btn:focus {
@@ -274,8 +276,6 @@ address {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop {
   position: fixed;
@@ -285,6 +285,8 @@ address {
   height: 100%;
   opacity: 1;
   visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   position: absolute;
@@ -459,8 +461,8 @@ address {
   border-radius: 50%;
   color: var(--social-link-icon);
   background: var(--hero-footer);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-icon:hover,
 .link-icon:focus {
@@ -469,6 +471,7 @@ address {
 }
 .team-social .svg-icon {
   fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* clients */
 .clients-title {
@@ -502,7 +505,6 @@ address {
   border: 1px solid var(--social-link-icon);
   border-radius: 4px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -516,6 +518,7 @@ address {
 }
 .clients-link .svg-icon {
   fill: var(--social-link-icon);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* FOOTER */
@@ -624,8 +627,8 @@ footer {
   color: var(--hero-footer);
   background: var(--join-in-list);
   padding: 12px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-icon:hover,
 .link-icon:focus {
@@ -647,8 +650,8 @@ footer {
   color: var(--text-color);
   cursor: pointer;
   border: transparent;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-projects:hover,
 .btn-projects:focus {
@@ -744,6 +747,10 @@ footer {
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-linkbox:hover .overlay-box {
+  transform: translateY(0);
+  opacity: 1;
+}
+.portfolio-link:focus .overlay-box {
   transform: translateY(0);
   opacity: 1;
 }
